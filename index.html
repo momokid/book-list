@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playground Library</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <button onclick="addBookToLibrary()" id="addNew">+</button>
+          <button>Show Read Books</button>
+          <button>Show Unread Books</button>
+        </div>
+        <div>
+          <button>Login</button>
+        </div>
+      </div>
+      <section>
+        <div class="leftPanel"></div>
+        <div class="section"></div>
+      </section>
+    </div>
+
+    <!-- Modal content -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!-- Form for new book -->
+        <div>
+          <h2>ADD NEW BOOK</h2>
+          <div>
+            <div class="form-element">
+              <label>Title</label>
+              <input id="title" placeholder="Enter Book Title" required />
+            </div>
+            <div class="form-element">
+              <label>Author</label>
+              <input id="author" placeholder="Enter Book Author" required />
+            </div>
+            <div class="form-element">
+              <label>Pages</label>
+              <input id="pages" placeholder="Enter Book Pages" required />
+            </div>
+            <div class="form-element">
+              <label>Have your read the book yet?</label>
+              <span>
+                <input type="radio" name="readStatus" value="true" />
+                Yes
+              </span>
+              <span>
+                <input type="radio" name="readStatus" value="false" />
+                No
+              </span>
+            </div>
+            <div class="form-element">
+              <button onclick="addBookToLibrary()">Create New Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/modal.js"></script>
+  </body>
+</html>
