@@ -11,7 +11,7 @@
     <div class="container">
       <div class="header">
         <div>
-          <button onclick="addBookToLibrary()" id="addNew">+</button>
+          <button onclick="addBookToLibrary()" id="addNew">Add New+</button>
           <button>Show Read Books</button>
           <button>Show Unread Books</button>
         </div>
@@ -32,36 +32,38 @@
         <span class="close">&times;</span>
 
         <!-- Form for new book -->
-        <div>
+        <div id="addNewBookForm">
           <h2>ADD NEW BOOK</h2>
-          <div>
-            <div class="form-element">
-              <label>Title</label>
-              <input id="title" placeholder="Enter Book Title" required />
+          <form id="my-form" autocomplete="off">
+            <div class="form-content">
+              <div class="form-element">
+                <label>Title</label>
+                <input type="text" id="title" placeholder="" required />
+              </div>
+              <div class="form-element">
+                <label>Author</label>
+                <input type="text" id="author" placeholder="" required />
+              </div>
+              <div class="form-element">
+                <label>Pages</label>
+                <input type="text" id="pages" placeholder="" required />
+              </div>
+              <div class="form-element">
+                <label>Have your read the book yet?</label>
+                <span>
+                  <input type="radio" name="readStatus" value="true" />
+                  Yes
+                </span>
+                <span>
+                  <input type="radio" name="readStatus" value="false" />
+                  No
+                </span>
+              </div>
+              <div>
+                <button onclick="addBookToLibrary()">Create New Book</button>
+              </div>
             </div>
-            <div class="form-element">
-              <label>Author</label>
-              <input id="author" placeholder="Enter Book Author" required />
-            </div>
-            <div class="form-element">
-              <label>Pages</label>
-              <input id="pages" placeholder="Enter Book Pages" required />
-            </div>
-            <div class="form-element">
-              <label>Have your read the book yet?</label>
-              <span>
-                <input type="radio" name="readStatus" value="true" />
-                Yes
-              </span>
-              <span>
-                <input type="radio" name="readStatus" value="false" />
-                No
-              </span>
-            </div>
-            <div class="form-element">
-              <button onclick="addBookToLibrary()">Create New Book</button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

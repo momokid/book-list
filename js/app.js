@@ -22,6 +22,12 @@ let libList = [
     readStatus: true,
   },
 ]
+
+//
+document.getElementById('my-form').addEventListener('submit', (e) => {
+  e.preventDefault()
+})
+
 //validate input
 function validateEntry(input) {
   if (input === '' || input === undefined) {
