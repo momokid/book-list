@@ -12,7 +12,7 @@
       <div class="header">
         <div>
           <button onclick="addBookToLibrary()" id="addNew">Add New+</button>
-          <button>Show Read Books</button>
+          <button onclick="showAllBooks()">Show Read Books</button>
           <button>Show Unread Books</button>
         </div>
         <div>
@@ -60,7 +60,9 @@
                 </span>
               </div>
               <div>
-                <button onclick="addBookToLibrary()">Create New Book</button>
+                <button onclick="addBookToLibrary()" id="btnAddBook">
+                  Create New Book
+                </button>
               </div>
             </div>
           </form>

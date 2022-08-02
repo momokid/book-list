@@ -1,6 +1,7 @@
 let displayCollections = document.querySelector('.section')
 let str = ''
 let newBook = {}
+let LISTDB
 
 let libList = [
   {
@@ -22,6 +23,13 @@ let libList = [
     readStatus: true,
   },
 ]
+
+//Open a DB
+function requestDB() {
+  return LISTDB === undefined ? indexedDB.open('LibApp', 3) : LISTDB
+}
+
+requestDB()
 
 //
 document.getElementById('my-form').addEventListener('submit', (e) => {
@@ -48,10 +56,10 @@ function Book(title, author, pages, readStatus) {
 function addBookToLibrary() {
   str = ''
   //Constructor
-  const title = document.getElementById('title').value
-  const author = document.getElementById('author').value
-  const pages = document.getElementById('pages').value
-  const readStatus = document.querySelector('input[name="readStatus"]:checked')
+  let title = document.getElementById('title').value
+  let author = document.getElementById('author').value
+  let pages = document.getElementById('pages').value
+  let readStatus = document.querySelector('input[name="readStatus"]:checked')
 
   if (title === '' || title === undefined) {
     console.log('Invalid title')
@@ -66,7 +74,21 @@ function addBookToLibrary() {
     newBook = new Book(title, author, pages, readStatus.value)
     libList.push(newBook)
 
+    //Display all books
     displayBooks(libList)
+
+    //Clear all fields
+    //clearInputFields()
+  }
+}
+
+//Clear all inpouyt fields
+function clearInputFields() {
+  let fields = document.querySelectorAll('.form-element input')
+  for (let i = 0; i < fields.length; i++) {
+    console.log(fields[i].value)
+    fields[i].value = ''
+    fields[i].checked = false
   }
 }
 
@@ -87,7 +109,7 @@ function displayBooks(bookList) {
                     
                 </div>
                 <p>Book No. ${index + 1}</p>
-                <button>-</button>
+                <button class="btnDelBook" data-id="${index}">-</button>
             </div>
         `
   })
@@ -95,5 +117,12 @@ function displayBooks(bookList) {
   displayCollections.innerHTML = str
 }
 
+;(function () {
+  if (!window.indexedDB) {
+    console.log('Browser does not support IndexDB')
+  }
+})()
+
 //
 displayBooks(libList)
+//

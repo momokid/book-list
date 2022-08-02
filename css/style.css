@@ -17,10 +17,10 @@ body {
 }
 .card {
   background-color: #bbb;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 250px;
   margin: 10px 10px;
-  padding: 5px;
+  padding: 10px;
   transform: rotate(4deg);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -45,14 +45,16 @@ body {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 .modal-content {
-  background-color: #04a004;
+  background-color: rgba(3, 131, 3, 0.9);
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 3px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
   animation-name: animatetop;
   animation-duration: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#addNew {
+  background-color: green;
 }
 /* The Close Button */
 .close {
@@ -86,15 +88,16 @@ body {
   background-color: #aaa;
   margin-bottom: 40px;
 }
-.header button {
+button {
   background: none;
   border: none;
   color: white;
-  border: 1px solid #ccc;
   font-size: 1.2rem;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+  border-radius: 5px;
+  background-color: rgb(26, 26, 160);
 }
 
 .header button:hover {
@@ -141,4 +144,11 @@ input[type='text'] {
   border: none;
   font-size: 1.3rem;
   color: #ccc;
+}
+#btnAddBook {
+  background: orange;
+}
+.btnDelBook {
+  background-color: red;
+  padding: 5px 10px;
 }
